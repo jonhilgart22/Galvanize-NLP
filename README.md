@@ -32,7 +32,7 @@ Course Description
 ----
 This course covers the fundamental concepts and algorithms in natural language processing (NLP). The goal is to process and understand text using statistical modeling and programming. 
 
-This course will start with basic text processing techniques (such as encoding text and regular expressions) and then cover advanced techniques (text classification and topic modeling) and word2vec algorithm. Along the way we will touch upon text mining, information retrieval, and computational linguistics.
+This course will start with basic text processing techniques (such as regular expressions and handling text encodings) and then cover advanced techniques (text classification and topic modeling). Finally, end with an introduction of to Deep Learning. Along the way we will touch upon text mining, information retrieval, and computational linguistics.
 
 By the end of the course, you should be able to:  
 ----
@@ -48,9 +48,9 @@ By the end of the course, you should be able to:
 
 Out of Scope
 ----
-- Non-English. I ❤️ other languages, and they are very important. There is just enough not time.
-- Speech. We'll assume audio waves have been digitized into text.
-- Natural Language Understanding (NLU). Finding "meaning" in text. We'll focus on lower levels of processing.
+- Non-English. I ❤️ other languages, and they are very important. There is just enough not time!
+- Speech. In the last couple of year, speech-based langauge processing has advanced greatly. For this class, we'll assume audio waves have been digitized into text.
+- Natural Language Understanding (NLU). Finding "meaning" in text. We'll spend most of our time focused on lower levels of processing.
 - Natural Language Generation (NLG). We'll only touch on how to programmatically create text.
 
 Prerequisites
@@ -81,7 +81,7 @@ Class Structure
 
 This course is an "active" learning environment. You'll learn through doing. 
 
-Before class you will complete preparation materials (e.g., watch videos, read chapters, and complete workbooks). These materials will be resource for factual knowledge. You are expected to be familiar with the basic concepts and technical jargon by the start of class.
+Before class you will complete preparation materials (e.g., watch videos, read chapters, and complete workbooks). All preparation materials should be covered prior to the start of each class session. They are __always required__ unless explicitly labeled as optional. These materials will be resource for factual knowledge. I (Brian) will not be delivering traditional lectures. You are expected to be familiar with the basic concepts and technical jargon by the start of class. 
 
 In-class time is precious - We'll reserve it for discussion, presenting complex material, answering questions, and working on exercises.  
 
@@ -116,7 +116,7 @@ The RATs are meant to assess the first three levels of [Bloom's Taxonomy](http:/
 
 [Pair programming](https://en.wikipedia.org/wiki/Pair_programming). "Pairing" is where two programmers are working on the same code at the same time. It is a great way to improve as programmer and solve problems. One acts as the "driver", the other as the "navigator". The driver types and the navigator helps. For example, the navigator might name variables or look up documentation. Pairs will change every class. 
 
-Project Presentations. Presentation are one way to demonstrate your learning, but more importantly it is practice for organizing and communicating your work and ideas. The presentations will function similar to code reviews in-front of your peers and instructors, functioning like Senior Developers. The purpose of students presenting work is two-fold:    
+Project Presentations. Presentation are one way to demonstrate your learning, but more importantly it is practice for organizing and communicating your work and ideas. The presentations will function similar to code reviews in-front of your peers and instructors, who will function like Senior Developers. The purpose of students presenting work is two-fold:    
 
 1. All students will learn from all exercises, whether or not they had time to complete them in class.  
 2. Students will get to see alternative approaches to the exercises they did complete.
@@ -150,7 +150,7 @@ Mastery Tracking uses a 4-point scale. Every student is expected to achieve 3 or
 We will be using Galvanize's Learning Management System (LMS) which can be found at [learn.galvanize.com](https://learn.galvanize.com).
 
 ### Participation
-You must also show up prepared. Each person is important to the dynamic of the class, and therefore students are required to participate in class activities. Expect to be "cold called". I call on students at random not to put you on the spot but to keep you engaged in the material at all times. All preparation materials (book readings, videos and websites) should be covered prior to each class session. They are __always required__ unless explicitly labeled as optional.
+You must also show up prepared. Each person is important to the dynamic of the class, and therefore students are required to participate in class activities. Expect to be "cold called". I call on students at random not to put you on the spot but to keep you engaged in the material at all times. 
 
 Attendance is mandatory. It is the responsibility of the student to attend all classes. If you have to miss class, due to sickness or other circumstances, please notify your instructor by Slack in advance. Supporting documents (doctor’s notes) should accompany absences due to sickness. Each excused absences beyond 2 or any unexcused absences will result in lowering your __overall course grade by ⅓ of an entire letter grade__ (A->A-, A->B+). It is at the instructor’s discretion to deny any absences or to allow students to make-up assignments, exams, etc. resulted from any absences. 
 
@@ -184,7 +184,7 @@ Course Schedule
 ----
 
 1. NLP FUNdamentals
-    1. Welcome, NLP Overview, & Python 3
+    1. Welcome and NLP Overview
     2. Regular Expressions I
     3. Regular Expressions II
     4. Sentence Segmentation & Tokenization
@@ -217,9 +217,9 @@ Course Schedule
     1. Doc2Vec
     2. Everything2Vec
     3. Word2Vec Project Worksession (Wednesday)
-    4. The Future of NLP & Guest Speaker (Thrusday)
+    4. The Future of NLP & Guest Speaker (Thursday)
 8. Final Presentations
     1. Review
-    2. Final Project Worksession (Remeber: You will lose tomorrow as a work day to capstone pitches)
+    2. Final Project Worksession (Remember: You will lose tomorrow as a work day to capstone pitches)
     3. Final Project Presentations
     4. Final Project Presentations
