@@ -19,7 +19,7 @@ Logistics:
 __Instructor:__ Brian Spiering [brian.spiering@galvanize.com](mailto:brian.spiering@galvanize.com)  
 __Office Hours:__ Wednesday 11a-12n & By Appointment  
 
-__Data-Scientist-in-Residence:__ [TBD](mailto:TBD)
+__Data-Scientist-in-Residence:__ [Maneesh Guta](mailto:maneesh.gupta@galvanize.com)  
 
 __Class Location:__ 44 Tehama St, 309 classroom, San Francisco, CA  <br>
 __Class Days/Times:__ 9a-10:20a Monday, Tuesday, Thursday, Friday <br>
@@ -32,7 +32,7 @@ Course Description
 ----
 This course covers the fundamental concepts and algorithms in natural language processing (NLP). The goal is to process and understand text using statistical modeling and programming.
 
-This course will start with basic text processing techniques (such as regular expressions and handling text encodings) and then cover advanced techniques (text classification and topic modeling). Finally, finish the course by introducting to Deep Learning with the word2vec algorithm. Along the way we will touch upon text mining, information retrieval, and computational linguistics.
+This course will start with basic text processing techniques (such as regular expressions and handling text encodings) and then cover advanced techniques (text classification and topic modeling). Finally, finish the course by introducing to Deep Learning with the word2vec algorithm. Along the way we will touch upon text mining, information retrieval, and computational linguistics.
 
 By the end of the course, you should be able to:  
 ----
@@ -208,17 +208,17 @@ Course Schedule
 5. Text Classification
     1. Information Retrieval Project Worksession
     2. Text Classification: Bernoulli Naïve Bayes
-    3. Text Classification: Multinomial Naïve Bayes (Wednesday)
+    3. Holiday 🦃 🍗 😴
     4. Holiday 🦃 🍗 😴
 6. Topic Modeling
-    1. Topic Modeling: Non-negative matrix factorization (NMF)
-    2. Topic Modeling: Latent Dirichlet allocation (LDA)
-    3. Topic Modeling Project Project Worksession
-    4. Word2Vec
+    1. Text Classification: Multinomial Naïve Bayes
+    2. Topic Modeling: Non-negative matrix factorization (NMF)
+    3. Topic Modeling: Latent Dirichlet allocation (LDA)
+    4. Topic Modeling Project Project Worksession
 7. Word2Vec
-    1. Doc2Vec
-    2. Everything2Vec
-    3. Word2Vec Project Worksession (Wednesday)
+    1. Word2Vec
+    2. Doc2Vec
+    3. Everything2Vec / Word2Vec Project Worksession (Wednesday)
     4. The Future of NLP & Guest Speaker (Thursday)
 8. Final Presentations
     1. Review
