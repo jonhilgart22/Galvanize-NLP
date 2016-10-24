@@ -34,6 +34,8 @@ This course covers the fundamental concepts and algorithms in natural language p
 
 This course will start with basic text processing techniques (such as regular expressions and handling text encodings) and then cover advanced techniques (text classification and topic modeling). Finally, finish the course by introducing to Deep Learning with the word2vec algorithm. Along the way we will touch upon text mining, information retrieval, and computational linguistics.
 
+This is course is a "buffet" format, a sample of everything but you get full on any one topic. People get PhD in each of these topics. __Remember__ - a little bit of knowledge goes a long way.
+
 By the end of the course, you should be able to:  
 ----
 
@@ -189,7 +191,7 @@ Course Schedule
     1. Welcome and NLP Overview
     2. Text Processing & Regular Expressions I
     3. Regular Expressions II
-    4. Sentence Segmentation & Tokenization
+    4. Segmenting, Tokenizing, & Stemming
 2. Language Modeling
     1. Text Encoding
     2. Edit Distance
@@ -202,7 +204,7 @@ Course Schedule
     4. Chatbots I (Thursday)
 4. Information Retrieval
     1. Chatbots II
-    2. Review
+    2. Review / Project Check-in
     3. Information Retrieval I
     4. Information Retrieval II
 5. Text Classification
