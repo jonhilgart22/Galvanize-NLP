@@ -1,19 +1,19 @@
-Bahman and Srinivasa  
-Mike and Daniel  
+Srinivasa and Daniel  
+Jon and Prashil  
 
-Viviane and Jonathan  
-Prashil and Dasha  
+Christiaan and Jaime  
+Carles and Bahman  
 
-Christiaan and Vijeth  
-Tracy and Justin  
+Mike and Anthony  
+Joseph and Tracy  
 
-Carles and Chau  
-Victor and Pranava  
+Victor and Vijeth  
+Aubrey and Luke  
 
-Jeremy and Anthony  
-Camille and Luke  
+Jeremy and Chau  
+Camille and Justin  
 
-Aubrey and Jaime  
-Joseph and Yun  
-Chip and Jon  
+Pranava and Yun  
+Chip and Dasha  
+ with Jonathan  
   

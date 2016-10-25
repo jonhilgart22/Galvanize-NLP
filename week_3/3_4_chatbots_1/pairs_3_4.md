@@ -1,19 +1,19 @@
+Jaime and Chau  
+Joseph and Srinivasa  
+
+Bahman and Tracy  
+Daniel and Prashil  
+
+Mike and Christiaan  
+Jonathan and Jon  
+
+Jeremy and Justin  
+Anthony and Yun  
+
+Dasha and Vijeth  
 Victor and Carles  
-Aubrey and Joseph  
 
-Prashil and Pranava  
-Daniel and Jonathan  
-
-Bahman and Luke  
-Tracy and Christiaan  
-
-Chau and Dasha  
-Mike and Jeremy  
-
-Jon and Yun  
-Viviane and Srinivasa  
-
-Jaime and Chip  
-Vijeth and Anthony  
-Camille and Justin  
+Aubrey and Camille  
+Pranava and Luke  
+ with Chip  
   
