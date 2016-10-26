@@ -23,13 +23,41 @@ def process_file(name, f):
     """
     
     dummy_pattern = '(\w+)@(\w+).edu' # TODO: Create your own patterns for email & phone
+    test_pattern_1 ='(\w+)@(\w+)(\.)(\w+)'  # This will match the characters at the end (for the domain) sdf@sdf.com will match
+    test_pattern_2 ='(\w+)@(\w+)(\.)(\w+)(\.)(\w+)' # will match sdf#sdf.sdf.com
+    test_pattern_3 = '(\w+)(\.)(\w+)@(\w+)(\.)(\w+)(\.)(\w+)' # Will match asdf.adsf@asdf.asdf.com
+    test_pattern_4 = '(\w+)(\.)(\w+)@(\w+)(\.)(\w+)' # will match sdf.sdf@asdf.com
+    
+    pattern = "|".join([test_pattern_1, test_pattern_2, test_pattern_3,test_pattern_4])
+    print(pattern,'pattern')
+    # A little bit of meta-programming (strings all the way down!)
+    # sub_pattern = '[ae]'
+    # pattern2 = sub_pattern.join(["c","l","nd","r"])
+
+    # # Does our test still pass?
+    # assert sorted(re.findall(pattern2, string)) != sorted(chink)
+    # assert sorted(re.findall(pattern2, string)) == sorted(chunk)
+
+    #total_patterns = [dummy_pattern,test_pattern_1,test_pattern_2,test_pattern_3,test_pattern_4]
 
     results = []
     for line in f:
-        matches = re.findall(dummy_pattern, line)
+        matches = re.findall(pattern, line)
+
+
         for match in matches:
-            email = '{}@{}.edu'.format(*match)
-            results.append((name,'e',email))
+            #print(match,'match -------')
+            #email_1 = '{}@{}.edu'.format(*match)
+            email_2 = '{}@{}{}{}'.format(*match)
+            print(email_2,'email 2')
+            email_3='{}{}{}@{}{}{}'.format(*match)
+            print(email_3,'email 3')
+            email_4 ='{}{}{}@{}{}{}{}{}'.format(*match)
+            print(email_4,'email 4')
+      
+
+            results.append((name,'e',email_2))
+            results.append((name,'e',email_3))
 
         # TODO: Create a section for phone matches
         
