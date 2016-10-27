@@ -22,17 +22,22 @@ def process_file(name, f):
     TODO: Change only the internals of this function. The assigment is modify and add lines.
     """
     
-    dummy_pattern = '(\w+)@(\w+).edu' # TODO: Create your own patterns for email & phone
-    test_pattern_1 ='(\w+)@(\w+)(\.)(\w+)'  # This will match the characters at the end (for the domain) sdf@sdf.com will match
-    test_pattern_2 ='(\w+)@(\w+)(\.)(\w+)(\.)(\w+)' # will match sdf#sdf.sdf.com
-    test_pattern_3 = '(\w+)(\.)(\w+)@(\w+)(\.)(\w+)(\.)(\w+)' # Will match asdf.adsf@asdf.asdf.com
-    test_pattern_4 = '(\w+)(\.)(\w+)@(\w+)(\.)(\w+)' # will match sdf.sdf@asdf.com
+    #dummy_pattern = '(\w+)@(\w+).edu' # TODO: Create your own patterns for email & phone
+    #test_patternemail_1 ='([\w%]+\.[\w%]+|[\w%]+|[\w%]+)[\s]?@[\s]?(([\w%]+\.[\w%]+\.[\w%]+)|([\w%]+\.[\w%]+))'  # This will match the characters at the end (for the domain) sdf@sdf.com will match
+    test_patternemail_1='([\w%]+\.[\w%]+|[\w%]+|[\w%]+)\s?@\s?([\w%]+\.[\w%]+\.[\w%]+|[\w%]+\.[\w%]+)'
+
+    test_patternemail_2 ='(\w+)\s\w{2}\s(\w+)\s(?:dot)\s(\w+)\s(?:dot)\s(\w+)' # captures test name dot name at something
+    test_patternemail_3 = '(\w+)\s(?:WHERE)\s([s]\w+)\s(?:DOM)\s(\w{3})' #engler where stanford DOM edu
+    #([\w]+\.[\w]+|[\w]+|[\w]+ )@(( [\w]+\.[\w]+)|([\w]+\.[\w]+\.[\w]+)|([\w]+\.[\w]+))  - 90 correct
+    test_patternphone_1 = '([\d]{3}|\([\d]{3}\))[-\. ]?([\d]{3})[-\. ]([\d]{4})' # Will match asdf.adsf@asdf.asdf.com
+
     
-    pattern = "|".join([test_pattern_1, test_pattern_2, test_pattern_3,test_pattern_4])
-    print(pattern,'pattern')
+
+    #pattern = test_pattern_1
+    #print(pattern,'pattern')
     # A little bit of meta-programming (strings all the way down!)
     # sub_pattern = '[ae]'
-    # pattern2 = sub_pattern.join(["c","l","nd","r"])
+    #emailpattern = "|".join([test_patternemail_1,test_patternemail_2])
 
     # # Does our test still pass?
     # assert sorted(re.findall(pattern2, string)) != sorted(chink)
@@ -42,22 +47,84 @@ def process_file(name, f):
 
     results = []
     for line in f:
-        matches = re.findall(pattern, line)
+        matches = re.findall(test_patternemail_1 ,line)
+        matches_phone = re.findall(test_patternphone_1, line)
+        matches_email_longform = re.findall(test_patternemail_2,line)
+        matches_email_longform2 = re.findall(test_patternemail_3 ,line)
+       
+        #print(matches, ' matches)')
+
+        for match in matches_email_longform2:
+            print(match,'match ---')
+            email= '{}@{}.{}'.format(*match)
+            results.append((name,'e',email))
+
+        for match in matches_email_longform:
+            print(match,'match ---')
+            email= '{}@{}.{}.{}'.format(*match)
+            results.append((name,'e',email))
 
 
         for match in matches:
-            #print(match,'match -------')
-            #email_1 = '{}@{}.edu'.format(*match)
-            email_2 = '{}@{}{}{}'.format(*match)
-            print(email_2,'email 2')
-            email_3='{}{}{}@{}{}{}'.format(*match)
-            print(email_3,'email 3')
-            email_4 ='{}{}{}@{}{}{}{}{}'.format(*match)
-            print(email_4,'email 4')
-      
+            print(match,'email match -----')
+            # email_length = len(match)
+            #if email_length==2:
+            email= '{}@{}'.format(*match)
+            results.append((name,'e',email))
+            # elif email_length == 4:
+            #     email = '{}@{}.{}.{}'.format(*match)
+            #     results.append((name,'e',email))
 
-            results.append((name,'e',email_2))
-            results.append((name,'e',email_3))
+
+     
+
+        for match in matches_phone:
+            print(match,'match  phone-------')
+            if match[0][0]=="(":
+                area_code = match[0][1:4]
+            else:
+                area_code = match[0]
+
+            try:
+                phone= '{}-{}-{}'.format(area_code,match[1],match[2])
+                results.append((name,'p',phone))
+            except:
+                print('failed')
+
+
+                # email= '{}@{}.{}.{}'.format(*match)
+                # results.append((name,'e',email))
+            
+        
+            # for count,character in enumerate(match):
+
+            #     if character != '':
+            #         print(character,'character')
+
+                    
+            #         match_length = len(match[count:])
+
+            #         #email_1 = '{}@{}.edu'.format(*match)
+            #         if match_length ==5:
+            #             email_2 = '{}{}{}{}{}'.format(*match[count:])
+            #             print(email_2,'email 2')
+            #             results.append((name,'e',email_2))
+            #             break
+            #         elif match_length ==7:
+            #             email_3='{}{}{}{}{}{}{}'.format(*match[count:])
+            #             print(email_3,'email 3')
+            #             results.append((name,'e',email_3))
+            #             break
+
+
+            #         else:
+
+            #             email_5 ='{}{}{}{}{}'.format(*match)
+            #             results.append((name,'e',email_5))
+            #             break
+                    #print(email_4,'email 4')
+                # else:
+                #     pass
 
         # TODO: Create a section for phone matches
         
