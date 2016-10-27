@@ -33,6 +33,7 @@ def process_file(name, f):
     test_patternemail_6 ='(?:[mailto"=href\sa<]+):([\w]+)%(?:[%at20]+)([standford]+)(?:[20dot=%<)]+)([edu]+)'#<a href="mailto:vladlen%20at%20stanford%20dot%20edu">
     test_patternemail_7='(?:[\w]+);E-mail:\s([\w]+)\s[at]+\s([cs.standford.edu]+)'#&nbsp;&nbsp;&nbsp;E-mail: lam at cs.stanford.edu
     test_patternemail_8='([\w])-([\w])-([\w])-([\w])-@-([s])-([t])-([\w])-([\w])-([\w])-([\w])-([\w])-([\w])-.-([\w])-([\w])-([\w])' #d-l-w-h-@-s-t-a-n-f-o-r-d-.-e-d-u
+    test_patternemail_9 ='([\w]+)&(?:[#x40;]+)([\w.]+)</em>'
     #([\w]+\.[\w]+|[\w]+|[\w]+ )@(( [\w]+\.[\w]+)|([\w]+\.[\w]+\.[\w]+)|([\w]+\.[\w]+))  - 90 correct
     test_patternphone_1 = '([\d]{3}|\([\d]{3}\))[-\. ]?([\d]{3})[-\. ]([\d]{4})[^\d]' # Will match asdf.adsf@asdf.asdf.com
 
@@ -61,8 +62,14 @@ def process_file(name, f):
         matches_email_longform5 = re.findall(test_patternemail_6,line)
         matches_email_longform6 = re.findall(test_patternemail_7,line)
         matches_email_longform7=re.findall(test_patternemail_8,line)
+        matches_email_longform8=re.findall(test_patternemail_9,line)
        
         #print(matches, ' matches)')
+        for match in matches_email_longform8:
+             print(match,'match --- longform 8')
+             email= '{}@{}'.format(*match)
+             results.append((name,'e',email))
+
         for match in matches_email_longform7:
              print(match,'match --- longform 7')
              email= '{}{}{}{}@{}{}{}{}{}{}{}{}.{}{}{}'.format(*match)
