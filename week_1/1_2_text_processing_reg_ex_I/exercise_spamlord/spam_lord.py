@@ -28,8 +28,13 @@ def process_file(name, f):
 
     test_patternemail_2 ='(\w+)\s\w{2}\s(\w+)\s(?:dot)\s(\w+)\s(?:dot)\s(\w+)' # captures test name dot name at something
     test_patternemail_3 = '(\w+)\s(?:WHERE)\s([s]\w+)\s(?:DOM)\s(\w{3})' #engler where stanford DOM edu
+    test_patternemail_4 = '([\w.]+)(?:\s\()(?:\w)+(?:\s)(?:\w)+(?:\s).(?:@)([\w.]+)' #ouster (followed by “@cs.stanford.edu”)
+    test_patternemail_5 = '([\w]+)(?:\s)[at]+(?:\s)([cs]+)(?:\s)([standford]+)(?:\s)([edu]+)'#pal at cs stanford edu
+    test_patternemail_6 ='(?:[mailto"=href\sa<]+):([\w]+)%(?:[%at20]+)([standford]+)(?:[20dot=%<)]+)([edu]+)'#<a href="mailto:vladlen%20at%20stanford%20dot%20edu">
+    test_patternemail_7='(?:[\w]+);E-mail:\s([\w]+)\s[at]+\s([cs.standford.edu]+)'#&nbsp;&nbsp;&nbsp;E-mail: lam at cs.stanford.edu
+    test_patternemail_8='([\w])-([\w])-([\w])-([\w])-@-([s])-([t])-([\w])-([\w])-([\w])-([\w])-([\w])-([\w])-.-([\w])-([\w])-([\w])' #d-l-w-h-@-s-t-a-n-f-o-r-d-.-e-d-u
     #([\w]+\.[\w]+|[\w]+|[\w]+ )@(( [\w]+\.[\w]+)|([\w]+\.[\w]+\.[\w]+)|([\w]+\.[\w]+))  - 90 correct
-    test_patternphone_1 = '([\d]{3}|\([\d]{3}\))[-\. ]?([\d]{3})[-\. ]([\d]{4})' # Will match asdf.adsf@asdf.asdf.com
+    test_patternphone_1 = '([\d]{3}|\([\d]{3}\))[-\. ]?([\d]{3})[-\. ]([\d]{4})[^\d]' # Will match asdf.adsf@asdf.asdf.com
 
     
 
@@ -37,22 +42,52 @@ def process_file(name, f):
     #print(pattern,'pattern')
     # A little bit of meta-programming (strings all the way down!)
     # sub_pattern = '[ae]'
-    #emailpattern = "|".join([test_patternemail_1,test_patternemail_2])
+    #emailpattern_twogroup = "|".join([test_patternemail_1 ,test_patternemail_4])
 
     # # Does our test still pass?
     # assert sorted(re.findall(pattern2, string)) != sorted(chink)
     # assert sorted(re.findall(pattern2, string)) == sorted(chunk)
 
-    #total_patterns = [dummy_pattern,test_pattern_1,test_pattern_2,test_pattern_3,test_pattern_4]
+    #total_patterns_two = [dummy_pattern,test_pattern_1,test_pattern_2,test_pattern_3,test_pattern_4]
 
     results = []
     for line in f:
-        matches = re.findall(test_patternemail_1 ,line)
+        matches = re.findall(test_patternemail_1,line)
         matches_phone = re.findall(test_patternphone_1, line)
         matches_email_longform = re.findall(test_patternemail_2,line)
         matches_email_longform2 = re.findall(test_patternemail_3 ,line)
+        matches_email_longform3 = re.findall(test_patternemail_4,line)
+        matches_email_longform4 = re.findall(test_patternemail_5,line)
+        matches_email_longform5 = re.findall(test_patternemail_6,line)
+        matches_email_longform6 = re.findall(test_patternemail_7,line)
+        matches_email_longform7=re.findall(test_patternemail_8,line)
        
         #print(matches, ' matches)')
+        for match in matches_email_longform7:
+             print(match,'match --- longform 7')
+             email= '{}{}{}{}@{}{}{}{}{}{}{}{}.{}{}{}'.format(*match)
+             results.append((name,'e',email))
+
+        for match in matches_email_longform6:
+             print(match,'match --- longform 6')
+             email= '{}@{}'.format(*match)
+             results.append((name,'e',email))
+
+        for match in matches_email_longform5:
+             print(match,'match --- longform 5')
+             email= '{}@{}.{}'.format(*match)
+             results.append((name,'e',email))
+
+
+        for match in matches_email_longform4:
+             print(match,'match --- longform 4')
+             email= '{}@{}.{}.{}'.format(*match)
+             results.append((name,'e',email))
+
+        for match in matches_email_longform3:
+             print(match,'match --- longform 3')
+             email= '{}@{}'.format(*match)
+             results.append((name,'e',email))
 
         for match in matches_email_longform2:
             print(match,'match ---')
@@ -66,7 +101,7 @@ def process_file(name, f):
 
 
         for match in matches:
-            print(match,'email match -----')
+            print(match,'email match ----- group two')
             # email_length = len(match)
             #if email_length==2:
             email= '{}@{}'.format(*match)
