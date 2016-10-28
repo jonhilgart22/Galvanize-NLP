@@ -97,7 +97,7 @@ def process_file(name, f):
              results.append((name,'e',email))
 
         for match in matches_email_longform2:
-            print(match,'match ---')
+            print(match,'match ---2')
             email= '{}@{}.{}'.format(*match)
             results.append((name,'e',email))
 
