@@ -38,7 +38,7 @@ __Preprocessing__:
 - How did you tokenize words? Is “didn’t” one token or two? Why did you make that choice?
 - Did you normalize your tokens in any way (case, stemming, lemmatization)? If so, how? Why or why not?
 - Does removing stop-wording or hapaxes help?
-- Did you segment sentences? N-grams? If so, why and how?
+- Did you segment sentences? If so, why and how?
 - Explore the frequency counts. Are there any terms that should be removed from your feature set? Why or why not?
 
 __Vectorizing__:
