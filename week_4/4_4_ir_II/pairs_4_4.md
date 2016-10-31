@@ -4,7 +4,7 @@ Chau and Mike
 Prashil and Christiaan  
 Yun and Chip  
 
-Srinivasa and Tracy  
+Srini and Tracy  
 Jonathan and Anthony  
 
 Justin and Pranava  

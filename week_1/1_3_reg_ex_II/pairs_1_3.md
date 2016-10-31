@@ -2,7 +2,7 @@ Aubrey and Jeremy
 Carles and Chau  
 
 Vijeth and Justin  
-Srinivasa and Anthony  
+Srini and Anthony  
 
 Camille and Jonathan  
 Pranava and Joseph  

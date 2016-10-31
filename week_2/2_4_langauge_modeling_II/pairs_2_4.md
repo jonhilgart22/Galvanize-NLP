@@ -1,4 +1,4 @@
-Srinivasa and Daniel  
+Srini and Daniel  
 Jon and Prashil  
 
 Christiaan and Jaime  

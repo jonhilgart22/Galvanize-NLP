@@ -8,7 +8,7 @@ Tracy and Chip
 Daniel and Victor  
 
 Yun and Joseph  
-Prashil and Srinivasa  
+Prashil and Srini  
 
 Jeremy and Jon  
 Dasha and Anthony  

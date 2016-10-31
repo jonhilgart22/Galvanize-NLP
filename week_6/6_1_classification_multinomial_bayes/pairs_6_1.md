@@ -1,4 +1,4 @@
-Srinivasa and Daniel  
+Srini and Daniel  
 Jon and Vijeth  
 
 Jonathan and Aubrey  

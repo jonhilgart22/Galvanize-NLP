@@ -1,5 +1,5 @@
 Jaime and Chau  
-Joseph and Srinivasa  
+Joseph and Srini  
 
 Bahman and Tracy  
 Daniel and Prashil  

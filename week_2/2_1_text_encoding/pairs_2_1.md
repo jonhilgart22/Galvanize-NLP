@@ -1,4 +1,4 @@
-Jon and Srinivasa  
+Jon and Srini  
 Jonathan and Carles  
 
 Bahman and Chau  

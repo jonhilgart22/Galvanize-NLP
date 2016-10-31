@@ -5,7 +5,7 @@ Victor and Joseph
 Vijeth and Camille  
 
 Justin and Christiaan  
-Aubrey and Srinivasa  
+Aubrey and Srini  
 
 Jonathan and Jaime  
 Yun and Chip  

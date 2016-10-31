@@ -4,7 +4,7 @@ Jeremy and Victor
 Anthony and Joseph  
 Aubrey and Yun  
 
-Srinivasa and Luke  
+Srini and Luke  
 Carles and Jonathan  
 
 Tracy and Dasha  

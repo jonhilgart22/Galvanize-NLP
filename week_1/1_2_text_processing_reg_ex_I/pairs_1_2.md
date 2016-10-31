@@ -7,7 +7,7 @@ Camille and Tracy
 Justin and Victor  
 Prashil and Anthony  
 
-Srinivasa and Joseph  
+Srini and Joseph  
 Yun and Carles  
 
 Daniel and Vijeth  
