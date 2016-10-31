@@ -4,7 +4,7 @@ Yun and Chau
 Jon and Justin  
 Daniel and Anthony  
 
-Srinivasa and Aubrey  
+Srini and Aubrey  
 Prashil and Vijeth  
 
 Mike and Christiaan  

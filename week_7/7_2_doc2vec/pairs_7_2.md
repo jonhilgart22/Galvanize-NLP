@@ -1,7 +1,7 @@
 Vijeth and Luke  
 Jeremy and Anthony  
 
-Srinivasa and Aubrey  
+Srini and Aubrey  
 Jaime and Daniel  
 
 Tracy and Jonathan  

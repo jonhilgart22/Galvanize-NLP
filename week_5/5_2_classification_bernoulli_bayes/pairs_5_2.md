@@ -2,7 +2,7 @@ Jeremy and Jaime
 Chip and Prashil  
 
 Pranava and Dasha  
-Daniel and Srinivasa  
+Daniel and Srini  
 
 Mike and Anthony  
 Victor and Yun  

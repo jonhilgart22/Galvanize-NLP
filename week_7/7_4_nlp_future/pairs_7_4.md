@@ -1,7 +1,7 @@
 Pranava and Vijeth  
 Christiaan and Jeremy  
 
-Victor and Srinivasa  
+Victor and Srini  
 Chip and Luke  
 
 Dasha and Carles  

@@ -4,7 +4,7 @@ Vijeth and Anthony
 Victor and Pranava  
 Chau and Tracy  
 
-Jonathan and Srinivasa  
+Jonathan and Srini  
 Prashil and Chip  
 
 Luke and Jon  

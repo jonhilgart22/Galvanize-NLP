@@ -1,7 +1,7 @@
 Vijeth and Chip  
 Tracy and Pranava  
 
-Srinivasa and Mike  
+Srini and Mike  
 Joseph and Chau  
 
 Daniel and Prashil  

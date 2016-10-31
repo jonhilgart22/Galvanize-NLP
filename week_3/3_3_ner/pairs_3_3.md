@@ -8,7 +8,7 @@ Mike and Carles
 Christiaan and Luke  
 
 Chip and Camille  
-Srinivasa and Jonathan  
+Srini and Jonathan  
 
 Bahman and Prashil  
 Vijeth and Pranava  

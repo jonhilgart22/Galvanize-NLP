@@ -2,7 +2,7 @@ Justin and Camille
 Bahman and Chau  
 
 Mike and Yun  
-Srinivasa and Daniel  
+Srini and Daniel  
 
 Jon and Aubrey  
 Tracy and Jonathan  

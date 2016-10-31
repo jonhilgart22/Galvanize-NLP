@@ -4,7 +4,7 @@ Daniel and Pranava
 Mike and Camille  
 Jonathan and Jeremy  
 
-Srinivasa and Chau  
+Srini and Chau  
 Aubrey and Christiaan  
 
 Chip and Joseph  

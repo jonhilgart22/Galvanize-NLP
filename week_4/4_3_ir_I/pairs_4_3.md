@@ -4,7 +4,7 @@ Carles and Chau
 Mike and Dasha  
 Bahman and Chip  
 
-Vijeth and Srinivasa  
+Vijeth and Srini  
 Jon and Victor  
 
 Daniel and Camille  

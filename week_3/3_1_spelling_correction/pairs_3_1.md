@@ -10,7 +10,7 @@ Chip and Bahman
 Jon and Carles  
 Vijeth and Jonathan  
 
-Srinivasa and Victor  
+Srini and Victor  
 Luke and Prashil  
 
 Mike and Jeremy  

@@ -1,5 +1,5 @@
 Anthony and Jon  
-Pranava and Srinivasa  
+Pranava and Srini  
 
 Jeremy and Yun  
 Prashil and Mike  

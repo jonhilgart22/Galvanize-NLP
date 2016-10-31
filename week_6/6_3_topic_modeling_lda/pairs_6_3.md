@@ -10,7 +10,7 @@ Pranava and Yun
 Joseph and Mike  
 Jaime and Camille  
 
-Srinivasa and Justin  
+Srini and Justin  
 Jeremy and Luke  
 
 Dasha and Prashil  

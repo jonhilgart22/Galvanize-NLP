@@ -1,7 +1,7 @@
 Mike and Jonathan  
 Daniel and Bahman  
 
-Prashil and Srinivasa  
+Prashil and Srini  
 Christiaan and Carles  
 
 Vijeth and Aubrey  

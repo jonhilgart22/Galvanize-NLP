@@ -1,4 +1,4 @@
-Chip and Srinivasa  
+Chip and Srini  
 Pranava and Chau  
 
 Dasha and Tracy  

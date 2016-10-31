@@ -11,7 +11,7 @@ Camille and Justin
 Christiaan and Chip  
 
 Jon and Aubrey  
-Srinivasa and Yun  
+Srini and Yun  
 
 Joseph and Jonathan  
 Tracy and Luke  
