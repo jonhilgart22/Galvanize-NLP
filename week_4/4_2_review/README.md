@@ -1,1 +1,5 @@
-> English is a funny language; that explains why we park our car on the driveway and drive our car on the parkway. 
+Review
+----
+- Do: Review all your notes
+- Do: Submit at questions (or specific concepts to review) to slid.io #9164
+
