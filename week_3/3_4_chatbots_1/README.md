@@ -4,7 +4,6 @@ Chatbots, Part I
 - Read: [bot design patterns](http://willschenk.com/bot-design-patterns/)
 - Read: [The Complete Beginner’s Guide To Chatbots](https://chatbotsmagazine.com/the-complete-beginner-s-guide-to-chatbots-8280b7b906ca#.z0iko4mcm)
 - Read: What Are Conversational Bots? (in readings folder)
-- Read: [On chatbots](https://blog.acolyer.org/2016/06/27/on-chatbots/)
 - Read: Eliza Series (You'll be coding Eliza during lab)
     - http://www.filfre.net/2011/06/eliza-part-1/
     - http://www.filfre.net/2011/06/eliza-part-2/
