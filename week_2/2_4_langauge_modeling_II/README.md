@@ -7,6 +7,7 @@ Language Modeling, Part II
 - Watch: [Heap’s Law](https://www.youtube.com/watch?v=QwV-aCaWKq8)
 - Optional:
     + Read: [A formal derivation of Heaps’ Law](http://www.mathcs.emory.edu/~whalen/Hash/Hash_Articles/A%20formal%20derivation%20of%20Heaps'%20Law.pdf)
+    - Read: Collocations (in readings folder)
     - Read: 40 years of Suffix Trees (in readings folder)
     - Watch:
         + [Interpolation](https://www.youtube.com/watch?v=-aMYz1tMfPg&index=17&list=PLhVhwi0Pz282aSA2uZX4jR3SkF3BKyMOK)
