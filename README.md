@@ -44,7 +44,7 @@ By the end of the course, you should be able to:
 1. Deploy a chat bot
 1. Build an information retrieval system
 1. Classify text to perform sentiment analysis
-1. Perform topic modeling to cluster text
+1. Cluster text to perform topic modeling 
 1. Create and use vector representations of words with word2vec
 1. Build an end-to-end system to model meaning in text
 
@@ -201,26 +201,26 @@ Course Schedule
     1. Spelling Correction
     2. Word Tagging
     3. Named Entity Recognition (NER) (Wednesday)
-    4. Chatbots I (Thursday)
+    4. Review / Project Check-in (Thursday)
 4. Information Retrieval
-    1. Chatbots II
-    2. Review / Project Check-in
-    3. Information Retrieval I
-    4. Information Retrieval II
+    1. Information Retrieval I 
+    2. Information Retrieval II
+    3. Information Retrieval Project Worksession & Presentations  
+    4. Chatbots I 
 5. Text Classification
-    1. Information Retrieval Project Worksession
-    2. Text Classification: Bernoulli Naïve Bayes
+    1. Chatbots II
+    2. Text Classification: Naïve Bayes
     3. Holiday 🦃 🍗 😴
     4. Holiday 🦃 🍗 😴
 6. Topic Modeling
-    1. Text Classification: Multinomial Naïve Bayes
+    1. Text Classification: Sentiment Analysis
     2. Topic Modeling: Non-negative matrix factorization (NMF)
     3. Topic Modeling: Latent Dirichlet allocation (LDA)
-    4. Topic Modeling Project Project Worksession
+    4. Topic Modeling Project Project Worksession & Presentations
 7. Word2Vec
     1. Word2Vec
     2. Doc2Vec
-    3. Everything2Vec / Word2Vec Project Worksession (Wednesday)
+    3. Everything2Vec / Word2Vec Project Worksession & Presentations (Wednesday)
     4. The Future of NLP & Guest Speaker (Thursday)
 8. Final Presentations
     1. Review
