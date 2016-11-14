@@ -59,26 +59,74 @@ The probability goes down because "the the" does not appear often in the corpus.
 
 TODO: Why does the probability of this phrase go way up with bigram word?
 
-the bigrams "Of the" and "the same" are seen a lot in our corpus, thus they have a high probability of occurring. However, the product of the unigrams "of", "the" and "same" are lower because one of those words isn't seen a lot in our corpus. 
+the bigrams "Of the" and "the same" are seen a lot in our corpus, thus they have a high probability of occurring. However, the product of the unigrams "of", "the" and "same" are lower because one of those words isn't seen a lot in our corpus.
 ## Week2-4: Language Modeling II
+```python
+def word_data(blob):
+    memo = ()
+    counts = []
 
+    vocab = set()
+
+    for tok in blob.tokens:
+        if tok not in vocab:
+            vocab.add(tok)
+        #calculating len(vocab) every iteration is wasteful
+        counts.append(len(vocab))
+
+    #going through the entire list again is wasteful
+    return[(i+1,counts[i]) for i  in range(len(counts))]
+
+def word_data(blob):
+    ans = []
+    counts = []
+
+    vocab = set()
+    vocab_len = 0
+
+    for tok in blob.tokens:
+      #if word not in vocab, add word to vocab and increase vocab length by 1
+        if tok not in vocab:
+            vocab.add(tok)
+            vocab_len += 1
+        #append each new answer to the output list as a tuple
+        ans.append((i+1,len(vocab)))
+    return ans
+```
 ## Week3-1: Spelling Correction
+```python
+with open('../../corpora/spell_errors.txt') as t:
+    spelling = t.read()
 
+spelling = re.split('\n|:',spelling)
+spelling = [item.replace('_',' ') for item in spelling]
+spelling = [item.strip(' ') for item in spelling]
+
+#you went through t once, and spelling twice, this is inefficient
+#you should only go through the list once
+spell_errors = {}
+with open("../../../corpora/spell_errors.txt") as f:
+    for line in f: #this goes through f once
+        correct, errors = line.split(":")
+        spell_errors[correct.replace("_", " ")] = errors.strip().split(", ")  
+```
 ## Week3-2: Word Tagging
+You don't need to create a default tagger function, nltk has one
 
+Didn't finish
 ## Week3-3: Named Entity Recognition (NER)
+Looks Good
+## Week3-4: Review/Project Check In
 
-## Week3-4: Chatbots I
+## Week4-1: Information Retrieval I
 
-## Week4-1: Chatbots II
+## Week4-2: Information Retrieval II
 
-## Week4-2: Review/Project Check In
+## Week4-3: Information Retrieval Project
 
-## Week4-3: Information Retrieval I
+## Week4-4: Chatbots I
 
-## Week4-4: Information Retrieval II
-
-## Week5-1: Information Retrieval Project
+## Week5-1: Chatbots II
 
 ## Week5-2: Naive Bayes
 
