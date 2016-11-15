@@ -178,6 +178,8 @@ class IRSystem:
     def index(self):
         """
         Build an index of the documents.
+        Inverted index is
+            word index : title index : list of offsets of word in doc[title index]
         """
         print("Indexing...")
         # ------------------------------------------------------------------
