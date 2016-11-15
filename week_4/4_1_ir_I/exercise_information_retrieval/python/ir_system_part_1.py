@@ -4,6 +4,7 @@ import math
 import os
 import re
 import sys
+from collections import defaultdict
 
 from PorterStemmer import PorterStemmer
 
@@ -141,11 +142,22 @@ class IRSystem:
         Build an index of the documents.
         """
         print("Indexing...")
-
+        #print(self.docs,'docs') ##stemmed words in the doc
         # TODO: Create an inverted index.
-        inv_index = {}
-        for word in self.vocab:
-            inv_index[word] = []
+
+
+        inv_index = defaultdict(list)
+        set_of_words = set(self.vocab)
+
+
+        for doc_index,doc in enumerate(self.docs):
+            doc_set = set(doc) #this is all the unique words in the doc
+            intersection = set_of_words.intersection(doc_set)
+            if len(intersection)>0: ## intersection greater than zero
+                for word in intersection: ##go through the words that occur in the doc and add the the dictionary
+                    inv_index[word].append(doc_index)
+
+        print(inv_index['hi'], ' inv index')
 
         self.inv_index = inv_index
 
@@ -156,7 +168,11 @@ class IRSystem:
         """
 
         # TODO: return the list of postings for a word.
-        posting = []
+      
+
+        list_of_docs_indexes = self.inv_index[word]
+
+        posting = sorted(list_of_docs_indexes)
 
         return posting
 
@@ -174,15 +190,28 @@ class IRSystem:
         """
         Given a query in the form of a list of *stemmed* words, this returns
         the list of documents in which *all* of those words occur (ie an AND
-        query).
-        Return an empty list if the query does not return any documents.
+       e query).
+        Return an empty list if the qury does not return any documents.
         """
         
         # TODO: Implement Boolean retrieval. You will want to use your inverted index that you created in index().
         # XXX: Right now this just returns all the possible documents!
-        docs = []
-        for d in range(len(self.docs)):
-            docs.append(d)
+
+        #docs = []
+        list_of_word_sets = []
+        for word in query:
+            list_of_word_sets.append(set(self.inv_index[word]))
+
+        docs=list(set.intersection(*list_of_word_sets))
+
+        #u = set.intersection(*setlist)
+
+        #for d in range(len(self.docs)):
+       #     list_of_indexes = []
+         #   for word in query:
+          #      self.inv_index[word] #
+
+           # docs.append(d)
 
         return sorted(docs)   # sorted doesn't actually matter
 
