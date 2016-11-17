@@ -4,6 +4,9 @@ import math
 import os
 import re
 import sys
+from collections import defaultdict
+from collections import Counter
+import numpy as np
 
 from PorterStemmer import PorterStemmer
 
@@ -147,13 +150,69 @@ class IRSystem:
         #       word-document pair, but rather just for those pairs where a
         #       word actually occurs in the document.
 
+        # 1+ log(TF) * log (N / df)
+        # TF = number of times the term occurs in the document
+        # N = number of documents
+        # df = number of documents that contain the given word
+        # calculated per document TFIDF,
+        # data structure is ('word',doc_index):{tfidf}
+
         print("Calculating tf-idf...")
-        self.tfidf = {}
-        for word in self.vocab:
-            for d in range(len(self.docs)):
-                if word not in self.tfidf:
-                    self.tfidf[word] = {}
-                self.tfidf[word][d] = 0.0
+        vocab_set = set(self.vocab)
+        number_of_docs = len(self.docs)
+
+        #self.tfidf = dict(defaultdict(int))
+        self.tfidf  = defaultdict(lambda: defaultdict(int))
+        ## THIS NEEDS TO BE A DICTIONARY OF DICTIONARIES
+
+        list_of_doc_counters = []
+        list_of_doc_sets = []
+
+        for word_count,word in enumerate(self.vocab):
+            number_of_docs_that_contain_word = 0
+            term_frequency_of_word_in_doc = 0
+            
+
+
+            if word_count ==0: ##only compute the counter and set cost once
+
+                for doc in self.docs:
+                    
+                    doc_set = set(doc)
+                    list_of_doc_sets.append(doc_set)
+                    doc_counter = Counter(doc)
+                    list_of_doc_counters.append(doc_counter)
+
+
+                    if word in doc_set : #the word occurs in this document
+                        number_of_docs_that_contain_word+=1
+
+                    else:
+                        continue
+            else:
+                for doc_set in list_of_doc_sets:
+                    if word in doc_set:
+                        number_of_docs_that_contain_word+=1
+
+
+
+                for doc_index, doc in enumerate(list_of_doc_counters):
+                    
+
+                    if number_of_docs_that_contain_word ==0: ## no need to go any further
+                        break
+                    
+                    elif word in doc.keys(): #the word occurs in this document
+
+                        term_frequency_of_word_in_doc =doc[word] #find all the terms that match
+
+
+                        self.tfidf[word][doc_index]= (1+np.log10(term_frequency_of_word_in_doc))*\
+                            np.log10(number_of_docs/number_of_docs_that_contain_word)
+
+                        
+                    else:
+                        continue 
 
 
     def get_tfidf(self, word, document):
@@ -162,7 +221,7 @@ class IRSystem:
         #       document index.
         tfidf = 0.0
         
-        return tfidf
+        return self.tfidf[word][document]
 
 
     def get_tfidf_unstemmed(self, word, document):
@@ -176,21 +235,31 @@ class IRSystem:
 
 
     def index(self):
+        
         """
         Build an index of the documents.
+        Inverted index is
+            word index : title index : list of offsets of word in doc[title index]
+        
         """
-        print("Indexing...")
-        # ------------------------------------------------------------------
-        # TODO: Create an inverted index.
-        #       Granted this may not be a linked list as in a proper
-        #       implementation.
-        #       Some helpful instance variables:
-        #         * self.docs = List of documents
-        #         * self.titles = List of titles
 
-        inv_index = {}
-        for word in self.vocab:
-            inv_index[word] = []
+        print("Indexing...")
+        #print(self.docs,'docs') ##stemmed words in the doc
+        # TODO: Create an inverted index.
+
+
+        inv_index = defaultdict(list)
+        set_of_words = set(self.vocab)
+
+
+        for doc_index,doc in enumerate(self.docs):
+            doc_set = set(doc) #this is all the unique words in the doc
+            intersection = set_of_words.intersection(doc_set)
+            if len(intersection)>0: ## intersection greater than zero
+                for word in intersection: ##go through the words that occur in the doc and add the the dictionary
+                    inv_index[word].append(doc_index)
+
+        print(inv_index['car'], ' inv index')
 
         self.inv_index = inv_index
 
@@ -204,10 +273,14 @@ class IRSystem:
         """
         # ------------------------------------------------------------------
         # TODO: return the list of postings for a word.
-        posting = []
+
+        # ------------------------------------------------------------------
+
+        list_of_docs_indexes = self.inv_index[word]
+
+        posting = sorted(list_of_docs_indexes)
 
         return posting
-        # ------------------------------------------------------------------
 
 
     def get_posting_unstemmed(self, word):
@@ -231,9 +304,11 @@ class IRSystem:
         # TODO: Implement Boolean retrieval. You will want to use your
         #       inverted index that you created in index().
         # Right now this just returns all the possible documents!
-        docs = []
-        for d in range(len(self.docs)):
-            docs.append(d)
+        list_of_word_sets = []
+        for word in query:
+            list_of_word_sets.append(set(self.inv_index[word]))
+
+        docs=list(set.intersection(*list_of_word_sets))
 
         # ------------------------------------------------------------------
 
@@ -252,16 +327,52 @@ class IRSystem:
 
         # Right now, this code simply gets the score by taking the Jaccard
         # similarity between the query and every document.
-        words_in_query = set()
-        for word in query:
-            words_in_query.add(word)
+        # cosine similarity is the dot product a dot b / norm vec(a) * norm vec (b)
+        #data structure (52, 0.0015739769150052466)
 
-        for d, doc in enumerate(self.docs):
-            words_in_doc = set(doc)
-            scores[d] = (len(words_in_query.intersection(words_in_doc)) 
-                        / float(len(words_in_query.union(words_in_doc))))
 
-        
+        #self.tfidf[word][doc_index]
+        #Cosine Similarity(Query,Document1) = Dot product(Query, Document1) / ||Query|| * ||Document1||
+
+        # Dot product(Query, Document1) 
+        #      = ((0.702753576) * (0.140550715) + (0.702753576)*(0.140550715))
+        #      = 0.197545035151
+
+        # ||Query|| = sqrt((0.702753576)2 + (0.702753576)2) = 0.993843638185
+
+        # ||Document1|| = sqrt((0.140550715)2 + (0.140550715)2) = 0.198768727354
+
+        # Cosine Similarity(Query, Document) = 0.197545035151 / (0.993843638185) * (0.198768727354)
+        #                                         = 0.197545035151 / 0.197545035151
+        #                                         = 1
+        # found help onlin https://github.com/pablocelis/Documents-Search-Engine/blob/master/python/search.py
+        print('Calculating Cosine Similarity....')
+        scores = [0.0 for xx in range(len(self.docs))]
+ 
+
+
+        # Calculate how often a term occurs in a query
+        q_count = Counter(query)
+
+    
+        for d_idx, doc in enumerate(self.docs):
+            intersection = set(query).intersection(set(doc))
+            doc_set = set(doc)
+            num = 0.0
+            den = 0.0
+
+            for word in intersection:
+                ## need to convert the frequency in the query to tfidfb 
+                top = (1.0 + math.log10(q_count[word]))* self.get_tfidf(word,d_idx) #word vector, doc vector numeratr
+                
+                num += top ## add the components together
+
+
+            for word in doc_set:
+                bottom = self.get_tfidf(word,d_idx)*self.get_tfidf(word,d_idx)#word vector, doc vector denominator
+                den += bottom ##  add the components together
+
+            scores[d_idx] = num/math.sqrt(den)
 
         ranking = [idx for idx, sim in sorted(enumerate(scores),
             key = lambda xx : xx[1], reverse = True)]
@@ -269,6 +380,7 @@ class IRSystem:
         for i in range(10):
             results.append((ranking[i], scores[ranking[i]]))
         return results
+
 
 
     def process_query(self, query_str):
