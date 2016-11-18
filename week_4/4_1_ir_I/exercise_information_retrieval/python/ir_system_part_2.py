@@ -346,6 +346,7 @@ class IRSystem:
         #                                         = 0.197545035151 / 0.197545035151
         #                                         = 1
         # found help onlin https://github.com/pablocelis/Documents-Search-Engine/blob/master/python/search.py
+        
         print('Calculating Cosine Similarity....')
         scores = [0.0 for xx in range(len(self.docs))]
  
