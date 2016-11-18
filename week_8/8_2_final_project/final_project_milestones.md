@@ -1,8 +1,8 @@
 Final Project Milestones
 ======
 
-- [ ] Find an interesting text domain [11/17]
-- [ ] Pick a dataset / Get Instructor approval [11/15]
+- [ ] Find an interesting text domain [11/15]
+- [ ] Pick a dataset / Get Instructor approval [11/17]
 - [ ] Acquire the data [11/18]
 - [ ] Procrastinate for a couple of days 😎 [11/19]
 - [ ] Write code to clean-up data [11/21]
