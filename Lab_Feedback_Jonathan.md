@@ -113,15 +113,23 @@ with open("../../../corpora/spell_errors.txt") as f:
 ## Week3-2: Word Tagging
 You don't need to create a default tagger function, nltk has one
 
-Didn't finish
 ## Week3-3: Named Entity Recognition (NER)
 Looks Good
 ## Week3-4: Review/Project Check In
 
 ## Week4-1: Information Retrieval I
-
+Looks Good
 ## Week4-2: Information Retrieval II
+```python
+#don't do this
+top = (1.0 + math.log10(q_count[word]))* self.get_tfidf(word,d_idx)
+num += top
 
+#do this
+top += (1.0 + math.log10(q_count[word]))* self.get_tfidf(word,d_idx)
+
+ # no need to have num or den variable
+```
 ## Week4-3: Information Retrieval Project
 
 ## Week4-4: Chatbots I
