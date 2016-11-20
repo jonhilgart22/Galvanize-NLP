@@ -10,6 +10,7 @@ Standard Examples
 - https://github.com/Kiminaka/airbnb_data_analysis
 - https://github.com/baolinliu/Programming/blob/master/Final_Project/Epinions.ipynb
 - https://github.com/almcmoran1/2016_candidate_classifier
+- https://github.com/lucasramadan/Music_Classification
 
 ----
 Exemplary Examples
