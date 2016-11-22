@@ -11,13 +11,6 @@ After doing this assignment you should be able to:
 -   Write working and well-organized code
 -   Present your results to a technical audience 
 
-For this project, pick a single dataset:
-
-- [User review datasets from Text Analytics](http://www.text-analytics101.com/2011/07/user-review-datasets_20.html) 
-- [Datasets on Crowdsourcing](http://dbgroup.cs.tsinghua.edu.cn/ligl/crowddata/)
-- [Springboard Datasets](https://www.springboard.com/blog/free-public-data-sets-data-science-project/)
-- Student's choice (Must approved by the instructor)
-
 First, perform Exploratory Data Analysis (EDA), cleaning, and preprocessing. Second, model your data. Note - These steps are iterative (a little preprocessing, a little modeling, redo the preprocessing, ...).
 
 Ideally this project would be become a part of your public Data Science portfolio.  
