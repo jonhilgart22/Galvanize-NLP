@@ -133,11 +133,11 @@ top += (1.0 + math.log10(q_count[word]))* self.get_tfidf(word,d_idx)
 ## Week4-3: Information Retrieval Project
 
 ## Week4-4: Chatbots I
-
+use list.insert() method to add different options to pyschobable
 ## Week5-1: Chatbots II
-
+Looks Good
 ## Week5-2: Naive Bayes
-
+Looks Good
 ## Week6-1: Sentiment Analysis
 
 ## Week6-2: Non-negative Matrix Factorization (NMF)
