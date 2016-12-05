@@ -11,6 +11,7 @@ Standard Examples
 - https://github.com/baolinliu/Programming/blob/master/Final_Project/Epinions.ipynb
 - https://github.com/almcmoran1/2016_candidate_classifier
 - https://github.com/lucasramadan/Music_Classification
+- https://github.com/JonathanHourany/gender_classification_with_nlp
 
 ----
 Exemplary Examples
@@ -31,3 +32,6 @@ Outside of class (but very interesting)
 - [Generate new rap lyrics](https://github.com/iluxonchik/lyricist)
 - [TweetSafe: DSI student project](http://tweetsafe.us-east-1.elasticbeanstalk.com/)
 - [Modern NLP in Python (on Yelp Reviews)](https://www.youtube.com/watch?v=6zm9NC9uRkk)
+- [Text Mining Twitter](http://blog.aylien.com/web-summit-2016-according-twitter-text-mining-80000-tweets/)- Modern NLP in Python
+    - [Videos](https://www.youtube.com/watch?v=6zm9NC9uRkk)
+    - [Notebooks](https://github.com/skipgram/modern-nlp-in-python/blob/master/executable/Modern_NLP_in_Python.ipynb)
