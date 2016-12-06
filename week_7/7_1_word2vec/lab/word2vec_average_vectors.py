@@ -14,9 +14,6 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
-from importlib import reload
-import kaggle_word2vec_utility
-reload(kaggle_word2vec_utility)
 from kaggle_word2vec_utility import KaggleWord2VecUtility
 
 def makeFeatureVec(words, model, num_features):
