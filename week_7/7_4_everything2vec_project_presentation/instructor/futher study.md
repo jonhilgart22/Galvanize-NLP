@@ -1,0 +1,9 @@
+- Read: http://blog.yhat.com/posts/words2map.html 
+- Chris Moody introduces lda2vec 
+    - [Watch](https://www.youtube.com/watch?v=eHcBeVnAiD4)
+    - Slides in readings folder
+- Optional:
+    - Read: [Visualizing Representations](http://colah.github.io/posts/2015-01-Visualizing-Representations/)
+    - Read: [On dead authors](http://googleresearch.blogspot.com/2016/02/on-personalities-of-dead-authors.html)
+    - Read: [word2vec for emojis](http://instagram-engineering.tumblr.com/post/117889701472/emojineering-part-1-machine-learning-for-emoji) 
+    - Check: [Deep Learning for Natural Language Processing](http://cs224d.stanford.edu/syllabus.html)

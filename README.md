@@ -220,10 +220,10 @@ Course Schedule
 7. Word2Vec
     1. Word2Vec
     2. Doc2Vec
-    3. Everything2Vec / Word2Vec Project Worksession & Presentations (Wednesday)
-    4. The Future of NLP & Guest Speaker (Thursday)
+    3. __Optional__: Worksession (Wednesday)
+    4. Everything2Vec / Word2Vec Project Worksession & Presentations  (Thursday)
 8. Final Presentations
-    1. Review
-    2. Final Project Worksession (Remember: You will lose tomorrow as a work day to capstone pitches)
+    1. The Future of NLP & Guest Speaker 
+    2. Review (Remember: You will lose tomorrow as a work day to capstone pitches)
     3. Final Project Presentations
     4. Final Project Presentations
