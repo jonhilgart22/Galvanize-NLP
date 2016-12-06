@@ -19,13 +19,13 @@ from sklearn.ensemble import RandomForestClassifier
 
 from kaggle_word2vec_utility import KaggleWord2VecUtility
 
-def create_bag_of_centroids( wordlist, word_centroid_map ):
+def create_bag_of_centroids(wordlist, word_centroid_map):
 
     # The number of clusters is equal to the highest cluster index in the word / centroid map
-    num_centroids = max( word_centroid_map.values() ) + 1
+    num_centroids = max(word_centroid_map.values()) + 1
     
     # Pre-allocate the bag of centroids vector (for speed)
-    bag_of_centroids = np.zeros( num_centroids, dtype="float32" )
+    bag_of_centroids = np.zeros(num_centroids, dtype="float32" )
     
     # Loop over the words in the review. If the word is in the vocabulary,
     # find which cluster it belongs to, and increment that cluster count by one
@@ -48,26 +48,26 @@ if __name__ == '__main__':
 
     # Initalize a k-means object and use it to extract centroids
     print("Running K means...")
-    kmeans_clustering = KMeans(n_clusters = num_clusters)
-    idx = kmeans_clustering.fit_predict( word_vectors )
+    kmeans_clustering = KMeans(n_clusters=num_clusters)
+    idx = kmeans_clustering.fit_predict(word_vectors)
 
     # Get the end time and print how long the process took
     end = time.time()
     elapsed = end - start
-    print("Time taken for K Means clustering: ", elapsed, "seconds.")
+    print("Time taken for K Means clustering: ", int(elapsed), "seconds.")
 
     # Create a Word / Index dictionary, mapping each vocabulary word to a cluster number
-    word_centroid_map = dict(zip( model.index2word, idx ))
+    word_centroid_map = dict(zip( model.index2word, idx))
 
-    for cluster in range(0, 10):
+    for cluster in range(0, num_clusters):
 
-        print("\nCluster %d" % cluster)
+        print("\nCluster,", cluster)
         
         # Find all of the words for that cluster number, and print them out
         words = []
-        for i in range(0,len(word_centroid_map.values())):
-            if(word_centroid_map.values()[i] == cluster):
-                words.append(word_centroid_map.keys()[i])
+        for i in range(0, len(word_centroid_map.values())):
+            if list(word_centroid_map.values())[i] == cluster:
+                words.append(list(word_centroid_map.keys())[i])
         print(words)
 
     # Create clean_train_reviews and clean_test_reviews as we did before
@@ -85,35 +85,29 @@ if __name__ == '__main__':
     print("Cleaning training reviews")
     clean_train_reviews = []
     for review in train["review"]:
-        clean_train_reviews.append( KaggleWord2VecUtility.review_to_wordlist( review, \
-            remove_stopwords=True ))
+        clean_train_reviews.append(KaggleWord2VecUtility.review_to_wordlist(review, remove_stopwords=True))
 
     print("Cleaning test reviews")
     clean_test_reviews = []
     for review in test["review"]:
-        clean_test_reviews.append( KaggleWord2VecUtility.review_to_wordlist( review, \
-            remove_stopwords=True ))
+        clean_test_reviews.append(KaggleWord2VecUtility.review_to_wordlist(review, remove_stopwords=True))
 
     # Create bags of centroids
     # Pre-allocate an array for the training set bags of centroids (for speed)
-    train_centroids = np.zeros( (train["review"].size, num_clusters), \
-        dtype="float32" )
+    train_centroids = np.zeros((train["review"].size, num_clusters), dtype="float32" )
 
     # Transform the training set reviews into bags of centroids
     counter = 0
     for review in clean_train_reviews:
-        train_centroids[counter] = create_bag_of_centroids( review, \
-            word_centroid_map )
+        train_centroids[counter] = create_bag_of_centroids(review, word_centroid_map )
         counter += 1
 
     # Repeat for test reviews
-    test_centroids = np.zeros(( test["review"].size, num_clusters), \
-        dtype="float32" )
+    test_centroids = np.zeros(( test["review"].size, num_clusters), dtype="float32" )
 
     counter = 0
     for review in clean_test_reviews:
-        test_centroids[counter] = create_bag_of_centroids( review, \
-            word_centroid_map )
+        test_centroids[counter] = create_bag_of_centroids(review, word_centroid_map )
         counter += 1
 
     # Fit a random forest and extract predictions
@@ -121,7 +115,7 @@ if __name__ == '__main__':
 
     # Fitting the forest may take a few minutes
     print("Fitting a random forest to labeled training data...")
-    forest = forest.fit(train_centroids,train["sentiment"])
+    forest = forest.fit(train_centroids, train["sentiment"])
     result = forest.predict(test_centroids)
 
     # Write the test results
