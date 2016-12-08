@@ -13,3 +13,4 @@ everything2Vec
 - Optional:
     - Read: [Visualizing Representations](http://colah.github.io/posts/2015-01-Visualizing-Representations/)
     - Read: [On dead authors](http://googleresearch.blogspot.com/2016/02/on-personalities-of-dead-authors.html)
+    - Read: [Exponential Family Embeddings](https://arxiv.org/abs/1608.00778)
