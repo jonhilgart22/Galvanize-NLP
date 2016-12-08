@@ -1,5 +1,0 @@
-----
-lda2vec
-----
-http://www.datasciencecentral.com/profiles/blogs/a-tale-about-lda2vec-when-lda-meets-word2vec
-
