@@ -1,9 +1,3 @@
-Guest Lecturer & The Future of NLP
-----
-+ Building a data processing pipeline in Python
-    + [Watch](https://www.youtube.com/watch?v=AlkuzBbiKk0)
-    + [Slides](http://www.slideshare.net/JoeCabrera3/building-a-data-processing-pipeline-in-python)
-    
 The Future of NLP
 ----
 - Optional:
