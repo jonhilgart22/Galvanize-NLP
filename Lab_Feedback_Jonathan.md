@@ -139,15 +139,15 @@ Looks Good
 ## Week5-2: Naive Bayes
 Looks Good
 ## Week6-1: Sentiment Analysis
-
+Looks Good
 ## Week6-2: Non-negative Matrix Factorization (NMF)
-
+Topic 0 is to general to give it a topic. However the other 3 seem really specific. This is an indicator that you should try more topics.
 ## Week6-3: Latent Dirichlet Allocation (LDA)
-
+Looks Good
 ## Week6-4: Topic Modeling Project
 
 ## Week7-1: Word2Vec
-
+Looks Good
 ## Week7-2: Doc2Vec
 
 ## Week7-3: Everything2Vec
