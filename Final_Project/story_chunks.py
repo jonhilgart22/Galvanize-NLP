@@ -40,7 +40,7 @@ def place_of_story(story_section,protag,antag,pl_one,lang_one,trump_speech,pl_tw
 		if there was a deeper meaning to the object. You decide you had enough and you {} the lightblub. Great, now what?'.format(vb_one),
 
 		' "It is time to explore!" you announce to {} . With that, you jump on your bike, put Trump on the handlebars, and start going. \
-		"Wait!" yells Alice "You are going to need this," she says handing you a {}. What do you do next? '.format(protag,sn_one), 
+		"Wait!" yells {} "You are going to need this," she says handing you a {}. What do you do next? '.format(protag,protag,sn_one), 
 
 		' "It is time to explore!" you announce to {} . With that, you jump on your skateboard, before realizing that Trump was not going to fit on your board. \
 		"Hmmm," you think. Maybe I better try something else. What do you do next?'.format(protag,sn_one)
@@ -52,7 +52,8 @@ def place_of_story(story_section,protag,antag,pl_one,lang_one,trump_speech,pl_tw
 		 #noun, antagonist, plural noun one, antagonise, antag
 
 		 ' You decide to take out your pocketknife and use it to carve the {} nearby with your initials.Trump smiles with a look of approval and says {} .\
-		  Now that you you will be remembered forever, what do you want to do next?'.format(trump_speech, sn_two),
+		  "Was he always this elegant?" you think to yourself.\
+		   Now that you you will be remembered forever from your carving, what do you want to do next?'.format(sn_two,trump_speech),
 
 		  'You see {} who says the following. Tonight is the night when all of the creepy monsters come out to {}. \
 		  Vampires with {} and long red capes visit with friends and search for neck napes. \

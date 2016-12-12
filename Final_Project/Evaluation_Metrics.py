@@ -24,8 +24,7 @@ def accuracy_score_test(list_of_lists_of_queries,story_chunk_responses,item_keyw
 			incorrect.append(idx)
 	if number_incorrect !=0:
 
-		print('The acuracy is :{:.2%}'.format(number_correct/(number_correct+number_incorrect)))
-		print('The query that failed was :',[list_of_lists_of_queries[i] for i in incorrect])
+		return 'The acuracy is',float(number_correct/(number_correct+number_incorrect)),'The query that failed was :',[list_of_lists_of_queries[i] for i in incorrect]
 	else:
-		print('The acuracy is :{:.2%}'.format(number_correct/(number_correct+number_incorrect)))
+		return 'The acuracy is',float(number_correct/(number_correct+number_incorrect))
 	#return "The accuracy is :{}".format(number_correct/(number_incorrect+number_incorrect))
