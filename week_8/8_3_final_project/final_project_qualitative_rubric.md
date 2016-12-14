@@ -1,6 +1,5 @@
-----
-Final Project Grading Notes
-====
+Final Project Qualitative Assessment
+-----
 
 Name: _________________________
 
@@ -27,7 +26,7 @@ Observations 😶:
 <br>
 <br>
 
-X factor:
+X factor🦄:
 
 <br>
 <br>

@@ -1,9 +1,9 @@
-----
-Final Project Challenge Questions
-====
 
-Be prepared to answer the following questions after your class presentation:
-----
+Final Project Challenge Questions
+---
+
+__Be prepared to answer the following questions after your class presentation:__
+
 - What was the biggest challenge?
 - What did you learn?
 - If you could hire someone to help, what skill set would you look for?

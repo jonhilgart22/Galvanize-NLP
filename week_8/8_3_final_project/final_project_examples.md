@@ -35,3 +35,4 @@ Outside of class (but very interesting)
 - [Text Mining Twitter](http://blog.aylien.com/web-summit-2016-according-twitter-text-mining-80000-tweets/)- Modern NLP in Python
     - [Videos](https://www.youtube.com/watch?v=6zm9NC9uRkk)
     - [Notebooks](https://github.com/skipgram/modern-nlp-in-python/blob/master/executable/Modern_NLP_in_Python.ipynb)
+- [Comparing different vectorizer on documents](http://sujitpal.blogspot.com/2016/12/document-similarity-using-various-text.html)
