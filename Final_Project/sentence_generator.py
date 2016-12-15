@@ -9,6 +9,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
 import re
 
+# cond_prob_bigram / cond_prob_trigram code inspired by Brian Spiering
+
 class SentenceGenerator():
 	"""Probabilistic language generation using a trigram model."""
 
