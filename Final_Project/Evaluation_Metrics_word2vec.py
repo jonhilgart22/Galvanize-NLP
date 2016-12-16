@@ -10,7 +10,6 @@ import gensim
 
 def accuracy_score_test(list_of_lists_of_queries,story_chunk_responses,item_keyword,type_of_evaluation):
 	"""Calculate the accuracy of return the correct response from each story chunk given the keyword of the item the user input"""
-
 	if type_of_evaluation=='tfidf':
 		number_correct=0
 		number_incorrect=0
@@ -39,45 +38,31 @@ def accuracy_score_test(list_of_lists_of_queries,story_chunk_responses,item_keyw
 		number_incorrect=0
 		incorrect = []
 		correct = []
-
-
 		for query_idx,query in enumerate(list_of_lists_of_queries):
 			tokens = TextBlob(query[0]).tokens
-
 			query_set = set(tokens)
 			len_query = len(query_set)	
 			top_score = 0
 			response_idx = 0
 			for idx,chunk in enumerate(story_chunk_responses):
 				story_tokens = TextBlob(chunk).tokens
-
 				jaccard_story= set(story_tokens) ##create a set of the words in the story
-				#print(jaccard_story,'jaccard story words')
 				len_chunk = len(jaccard_story)
-				#print(len_chunk,'len story chunk')
 				len_intersection = len(jaccard_story.intersection(query_set))
-				#print(len_intersection,'len intersection')
 				query_score = len_intersection  / (len_query+len_chunk) ## jaccard similarity
-
 				if query_score > top_score:
 					top_score=query_score ## replace with the best new match
 					response_idx=idx
 			if item_keyword in story_chunk_responses[response_idx]:
 				number_correct+=1
 				correct.append(list_of_lists_of_queries[query_idx])
-
 			else:
 				number_incorrect +=1
 				incorrect.append(list_of_lists_of_queries[query_idx])
-			
 		if number_incorrect !=0:
-
 			return 'The accuracy is',float(number_correct/(number_correct+number_incorrect)),'The query that failed was :',incorrect
 		else:
 			return 'The accuracy is',float(number_correct/(number_correct+number_incorrect)),'The correct queries are',correct
-
-
-
 # See top related words from word2vec model
 def word2vec(story_chunk,user_query):
 	"""Return the top related words to a user's query"""
